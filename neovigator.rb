@@ -99,7 +99,7 @@ class Neovigator < Sinatra::Application
     end
 
       incoming.merge(outgoing).each_pair do |key, value|
-        attributes << {:id => key.split(':').last, :name => key, :values => value.collect{|v| v[:values]} }
+        attributes << {:id => key.split(':').last, :name => key, :values => value.collect{|v| v[:values].merge({:name => v[:values]["title"]})} }
       end
 
    attributes = [{"name" => "No Relationships","name" => "No Relationships","values" => [{"id" => "#{params[:id]}","name" => "No Relationships "}]}] if attributes.empty?
