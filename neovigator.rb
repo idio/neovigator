@@ -106,7 +106,7 @@ class Neovigator < Sinatra::Application
 
     @node = {:details_html => "<h2>Neo ID: #{node_id(node)}</h2>\n<p class='summary'>\n#{get_properties(node)}</p>\n",
               :data => {:attributes => attributes, 
-                        :name => node["data"]["name"],
+                        :name => node["data"]["title"],
                         :id => node_id(node)}
             }
 

@@ -15,7 +15,7 @@ GEM
       rubyzip
     net-http-spy (0.2.1)
     os (0.9.5)
-    rack (1.4.0)
+    rack (1.4.1)
     rack-protection (1.2.0)
       rack
     rack-test (0.6.1)
