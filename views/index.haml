@@ -36,7 +36,7 @@
       var initialized = false;
         
       // init
-      var vizid =  window.location.search.substring(1).split("=")[1];
+      var vizid =  document.getElementById("neoid").value;
       if (vizid) {
         p.resourceId = vizid;
       } else {

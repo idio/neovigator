@@ -3,6 +3,14 @@ require 'neography'
 require 'sinatra/base'
 require 'uri'
 
+module Neography
+  class Rest
+    def get_node_id(node)
+      get_id(node)
+    end
+  end
+end
+
 class Neovigator < Sinatra::Application
   set :haml, :format => :html5 
   set :app_file, __FILE__
@@ -117,6 +125,23 @@ class Neovigator < Sinatra::Application
   get '/' do
     create_graph
     @neoid = params["neoid"]
+    @key = params["key"]
+    @value = params["value"]
+    @index = params["index"]
+
+    if @index
+      puts "Searching #{@index} for #{@key} => #{@value}"
+      nodes = neo.get_node_index(@index, @key, @value)
+      puts "Searched, found nodes"
+      puts nodes
+      if nodes
+        puts "Getting the first one"
+        puts nodes.first
+        @neoid = neo.get_node_id(nodes.first)
+      end
+    end
+
+    @indexes = neo.list_node_indexes.keys
     haml :index
   end
 
