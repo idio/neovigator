@@ -24,8 +24,8 @@
                 %option{:selected => "selected"} #{index}
               - else
                 %option #{index}
-          %input#key{:type => "text", :name => "key", :value => "#{@key}"}
-          %input#value{:type => "text", :name => "value", :value => "#{@value}"}
+          %input#key{:type => "text", :name => "key", :placeholder => "key", :value => "#{@key}"}
+          %input#value{:type => "text", :name => "value", :placeholder => "value", :value => "#{@value}"}
           %input#loadnodes{:type => "submit", :value => "Search", :class => "button"}
       %section#search
         %form{:action => "/", :method => "get"}
