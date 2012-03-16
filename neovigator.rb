@@ -3,6 +3,8 @@ require 'neography'
 require 'sinatra/base'
 require 'uri'
 
+YAML::ENGINE.yamler = "syck"
+
 module Neography
   class Rest
     def get_node_id(node)

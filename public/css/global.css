@@ -51,7 +51,7 @@ header section#title p {
 	line-height:1.4;	
 }
 
-header section#search {
+header section#search, header section#index_search {
 	float: right;
 	padding: 12px;
 	margin-right: 0px;
